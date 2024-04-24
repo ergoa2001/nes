@@ -132,8 +132,9 @@ class cpu:
         return 0
     def BRK(self):
         self.flagI = 1
-        self.write(0x0100 + self.stkp, ((self.pc + 1) >> 8) & 0xFF)
-        self.write(0x0100 + self.stkp - 1, (self.pc + 1) & 0xFF)
+        print('PC', self.pc, self.pc + 1)
+        self.write(0x0100 + self.stkp, ((self.pc) >> 8) & 0xFF)
+        self.write(0x0100 + self.stkp - 1, (self.pc) & 0xFF)
         self.flagB = 1
         self.status = self.flagC | (self.flagZ << 1) | (self.flagI << 2) | (self.flagD << 3) | (self.flagB << 4) | (self.flagU << 5) | (self.flagV << 6) | (self.flagN << 7)
         self.write(0x0100 + self.stkp - 2, self.status)
@@ -289,13 +290,13 @@ class cpu:
         return 0
     def PLP(self):
         self.stkp += 1
-        self.status = self.read(0x0100 + self.stkp)
+        self.status = self.read(0x0100 + self.stkp) & 0b11001111
         self.flagC = self.status & 0b1
         self.flagZ = (self.status & 0b10) >> 1
         self.flagI = (self.status & 0b100) >> 2
         self.flagD = (self.status & 0b1000) >> 3
         self.flagB = (self.status & 0b10000) >> 4
-        self.flagU = 1
+        self.flagU = 0
         self.flagV = (self.status & 0b1000000) >> 6
         self.flagN = (self.status & 0b10000000) >> 7
         return 0

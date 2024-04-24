@@ -2152,6 +2152,16 @@ files = [
 watchmedo = ["PyYAML (>=3.10)"]
 
 [[package]]
+name = "wednesday"
+version = "0.0.2"
+description = "wedNESday"
+optional = false
+python-versions = "<4.0,>=3.11"
+files = [
+    {file = "wednesday-0.0.2-py3-none-any.whl", hash = "sha256:d19d01b877f061c9e500a4b6b49995df52d00f248cb6727bcc19898777545635"},
+]
+
+[[package]]
 name = "xattr"
 version = "1.1.0"
 description = "Python wrapper for extended filesystem attributes"
@@ -2242,4 +2252,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "c000d466f5b3bddaf193c560dee7c969e93baf7e0b2d42108402d96325412f4d"
+content-hash = "0515fb385ae1dfba0538a9b63f4706c18666c8c4e43f68979230418e6f872f46"

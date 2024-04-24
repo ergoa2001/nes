@@ -22,6 +22,7 @@ sphinx-autodoc-typehints = "^2.0.0"
 sphinxcontrib-plantuml = "^0.29"
 sphinx-rtd-theme = "^2.0.0"
 poetry-bumpversion = "^0.3.2"
+wednesday = "^0.0.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

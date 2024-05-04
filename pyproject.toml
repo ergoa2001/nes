@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "arbne"
+version = "0.0.0"
+description = "Arbne NES emulator"
+authors = ["Guto Maia <guto@guto.net>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pygame = "^2.5.2"
+
+[tool.poetry.group.dev.dependencies]
+bandit = "^1.7.8"
+blue = "^0.9.1"
+pytest = "^8.1.1"
+pytest-cov = "^5.0.0"
+pytest-watch = "^4.2.0"
+py65 = "^1.1.0"
+git-changelog = "^2.4.1"
+m2r = "^0.3.1"
+sphinx-multiversion = "^0.2.4"
+sphinx-autodoc-typehints = "^2.0.0"
+sphinxcontrib-plantuml = "^0.29"
+sphinx-rtd-theme = "^2.0.0"
+poetry-bumpversion = "^0.3.2"
+wednesday = "^0.0.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry_bumpversion.file."applepy/__init__.py"]
